@@ -278,6 +278,7 @@ is_user_logged_in()
           if (applepay_config.isEligible) {
             document.getElementById("applepay-container").innerHTML = '<apple-pay-button id="applepay_button" buttonstyle="black" type="plain" locale="en">';
             global_apple_pay_config = applepay_config;
+            document.getElementById("applepay_button").addEventListener("click", handle_applepay_clicked);
           }
         })
         .catch(applepay_config_error => {
@@ -371,14 +372,6 @@ is_user_logged_in()
         current_ap_session.onpaymentauthorized = ap_payment_authed;
         current_ap_session.begin()
       };
-      let handle_pointerdown = (event) => {
-        switch(event.target.id) {
-          case "applepay_button":
-            handle_applepay_clicked(event);
-            break;
-        }
-      }
-      document.addEventListener("pointerdown", handle_pointerdown);
 })
 .catch((error) => {
     reset_purchase_button();

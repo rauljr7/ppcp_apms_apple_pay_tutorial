@@ -343,7 +343,7 @@ is_user_logged_in()
       let ap_validate = (event) => {
         applepay.validateMerchant({
           validationUrl: event.validationURL,
-          displayName: "My Demo NFT Company"
+          displayName: "My Demo Company"
         })
         .then(validateResult => {
           current_ap_session.completeMerchantValidation(validateResult.merchantSession);
@@ -362,7 +362,7 @@ is_user_logged_in()
           requiredShippingContactFields: ["name", "phone", "email", "postalAddress"],
           requiredBillingContactFields: ["name", "phone", "email", "postalAddress"],
           total: {
-            label: "My Demo NFT Company",
+            label: "My Demo Company",
             type: "final",
             amount: "100.0",
           }

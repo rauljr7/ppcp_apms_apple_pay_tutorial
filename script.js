@@ -360,7 +360,7 @@ is_user_logged_in()
           supportedNetworks: global_apple_pay_config.supportedNetworks,
           currencyCode: "USD",
           requiredShippingContactFields: ["name", "phone", "email", "postalAddress"],
-          requiredBillingContactFields: ["name", "phone", "email", "postalAddress"],
+          requiredBillingContactFields: ["postalAddress"],
           total: {
             label: "My Demo Company",
             type: "final",
